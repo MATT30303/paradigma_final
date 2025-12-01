@@ -1,5 +1,6 @@
-import { Task } from "./Task";
-
+import { Task } from './Task';
+import tasksJson from './tasks.json';
 export class TaskManager {
-    tasks: Task[] = [];
+  tasks: Task[] = tasksJson as Task[];
+  //equisde
 }
