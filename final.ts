@@ -1,22 +1,17 @@
-const readline = require('readline');
+import readline from "readline";
 
-interface Task {
-  title: string;
-  description: string;
-  difficulty: number;
-  status: number;
-}
+
+import { Task } from "./Task";
+import { TaskManager } from "./TaskManager";
 
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
 
-const tasks: Task[] = [
-  { title: 'tarea1', description: 'descripcion1', difficulty: 1, status: 1 },
-  { title: 'tarea2', description: 'descripcion2', difficulty: 2, status: 2 },
-  { title: 'tarea3', description: 'descripcion3', difficulty: 3, status: 3 },
-];
+
+
+const TaskManager1 = new TaskManager();
 
 // mensajes
 const MENU_MSG =
