@@ -1,8 +1,11 @@
-import readline from "readline";
+const readline = require('readline');
 
-
-import { Task } from "./Task";
-import { TaskManager } from "./TaskManager";
+interface Task {
+  title: string;
+  description: string;
+  difficulty: number;
+  status: number;
+}
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -200,9 +203,6 @@ async function searchTask(): Promise<void> {
     return;
   }
 
-  const difficulty = getDifficulty(taskSelected.difficulty);
-  const status = getStatus(taskSelected.status);
-
   console.log(
     '\nEsta es la tarea que elegiste:\n',
     taskSelected.title,
@@ -210,10 +210,10 @@ async function searchTask(): Promise<void> {
     taskSelected.description,
     '\n',
     'Estado: ',
-    status,
+    taskSelected.status,
     '\n',
     'Dificultad: ',
-    difficulty,
+    taskSelected.difficulty,
     '\n'
   );
 
