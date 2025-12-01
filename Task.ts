@@ -1,7 +1,7 @@
 export class Task {
   title: string;
   description: string;
-  status: string;
+  status: 'PENDING' | 'IN_PROGRESS' | 'FINISHED' | 'CANCELED';
   createdAt: string;
   updatedAt: string;
   dueDate: string;
@@ -17,7 +17,7 @@ export class Task {
   ) {
     this.title = title;
     this.description = description;
-    this.status = status;
+    this.status = status as any;
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
     this.dueDate = dueDate;

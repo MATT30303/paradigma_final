@@ -1,0 +1,11 @@
+{
+  "MENU_MSG": "\nQue deseas hacer?\n \n[1] Ver mis tareas.\n[2] Buscar mis tareas.\n[3] Agregar una tarea.\n[4] Ver estadisticas.\n[0] Salir.\n-->",
+  "SHOW_LIST_MSG": "\nQue tareas deseas ver?\n \n[1] Todas. \n[2] Pendientes. \n[3] En curso. \n[4] Terminadas. \n[0] Volver.\n-->",
+  "SELECT_TASK_MSG": "\nDeseas ver los detalles de alguna?\nIntroduce el numero para verla o 0 para volver\n-->",
+  "EDIT_SELECTED_MSG": "\nSi deseas editarla, presiona E, o presiona 0 para volver\n-->",
+  "SEARCH_MSG": "Introduce el titulo de una tarea para buscarla:\n--> ",
+  "TITLE_MSG": "0. Ingresa un titulo: -->",
+  "DESC_MSG": "1. Ingresa la descripcion: -->",
+  "STATUS_MSG": "2. Estado ([1] Pendiente  /  [2] En curso  /  [3] Terminado  /  [4] Cancelada): -->",
+  "DIFF_MSG": "3. Dificultad ([1]  /  [2]  /  [3]): -->"
+}

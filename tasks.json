@@ -11,7 +11,7 @@
   {
     "title": "Configurar red local IPv4",
     "description": null,
-    "status": "IN-PROGRESS",
+    "status": "IN_PROGRESS",
     "createdAt": "2025-10-02T10:30:00",
     "updatedAt": null,
     "dueDate": null,
@@ -56,7 +56,7 @@
   {
     "title": "Simular protocolo TCP",
     "description": null,
-    "status": "IN-PROGRESS",
+    "status": "IN_PROGRESS",
     "createdAt": "2025-10-06T11:30:00",
     "updatedAt": null,
     "dueDate": null,
@@ -101,7 +101,7 @@
   {
     "title": "Diseñar base de datos para biblioteca",
     "description": "Debe incluir libros, autores y préstamos.",
-    "status": "IN-PROGRESS",
+    "status": "IN_PROGRESS",
     "createdAt": "2025-10-09T11:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -128,7 +128,7 @@
   {
     "title": "Crear estructura de datos Cola",
     "description": null,
-    "status": "IN-PROGRESS",
+    "status": "IN_PROGRESS",
     "createdAt": "2025-10-11T10:15:00",
     "updatedAt": null,
     "dueDate": null,
@@ -173,7 +173,7 @@
   {
     "title": "Implementar CRUD en PHP",
     "description": "Debe incluir conexión a MySQL.",
-    "status": "IN-PROGRESS",
+    "status": "IN_PROGRESS",
     "createdAt": "2025-10-14T10:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -218,7 +218,7 @@
   {
     "title": "Diseñar sistema de login con sesiones",
     "description": null,
-    "status": "IN-PROGRESS",
+    "status": "IN_PROGRESS",
     "createdAt": "2025-10-17T10:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -245,7 +245,7 @@
   {
     "title": "Crear script de instalación automática",
     "description": "Debe instalar dependencias y configurar entorno.",
-    "status": "IN-PROGRESS",
+    "status": "IN_PROGRESS",
     "createdAt": "2025-10-20T11:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -281,7 +281,7 @@
   {
     "title": "Implementar login con tokens JWT",
     "description": "Debe incluir expiración y verificación.",
-    "status": "IN-PROGRESS",
+    "status": "IN_PROGRESS",
     "createdAt": "2025-10-24T11:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -308,7 +308,7 @@
   {
     "title": "Configurar servidor web Apache",
     "description": null,
-    "status": "IN-PROGRESS",
+    "status": "IN_PROGRESS",
     "createdAt": "2025-10-27T11:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -353,7 +353,7 @@
   {
     "title": "Crear sistema de autenticación con OAuth2",
     "description": "Debe incluir scopes y refresh tokens.",
-    "status": "IN-PROGRESS",
+    "status": "IN_PROGRESS",
     "createdAt": "2025-11-01T08:30:00",
     "updatedAt": null,
     "dueDate": null,
@@ -380,7 +380,7 @@
   {
     "title": "Crear simulador de árbol AVL",
     "description": null,
-    "status": "IN-PROGRESS",
+    "status": "IN_PROGRESS",
     "createdAt": "2025-11-04T11:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -425,7 +425,7 @@
   {
     "title": "Diseñar lógica de control de humedad",
     "description": "Usar sensor y actuador.",
-    "status": "IN-PROGRESS",
+    "status": "IN_PROGRESS",
     "createdAt": "2025-11-09T08:30:00",
     "updatedAt": null,
     "dueDate": null,
@@ -452,7 +452,7 @@
   {
     "title": "Diseñar lógica de control de iluminación",
     "description": "Usar sensor de luz y relé.",
-    "status": "IN-PROGRESS",
+    "status": "IN_PROGRESS",
     "createdAt": "2025-11-12T09:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -479,7 +479,7 @@
   {
     "title": "Diseñar sistema de control de acceso RFID",
     "description": null,
-    "status": "IN-PROGRESS",
+    "status": "IN_PROGRESS",
     "createdAt": "2025-11-15T08:30:00",
     "updatedAt": null,
     "dueDate": null,
@@ -506,7 +506,7 @@
   {
     "title": "Crear sistema de autenticación biométrica",
     "description": "Usar huella digital.",
-    "status": "IN-PROGRESS",
+    "status": "IN_PROGRESS",
     "createdAt": "2025-11-18T11:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -533,7 +533,7 @@
   {
     "title": "Crear simulador de árbol rojo-negro",
     "description": null,
-    "status": "IN-PROGRESS",
+    "status": "IN_PROGRESS",
     "createdAt": "2025-11-21T10:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -578,7 +578,7 @@
   {
     "title": "Diseñar lógica de control de presión",
     "description": "Usar sensor y válvula.",
-    "status": "IN-PROGRESS",
+    "status": "IN_PROGRESS",
     "createdAt": "2025-11-26T11:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -605,7 +605,7 @@
   {
     "title": "Diseñar sistema de control de temperatura ambiente",
     "description": null,
-    "status": "IN-PROGRESS",
+    "status": "IN_PROGRESS",
     "createdAt": "2025-11-29T10:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -632,7 +632,7 @@
   {
     "title": "Crear sistema de autenticación con PIN",
     "description": "Debe incluir bloqueo por intentos fallidos.",
-    "status": "IN-PROGRESS",
+    "status": "IN_PROGRESS",
     "createdAt": "2025-12-02T09:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -659,7 +659,7 @@
   {
     "title": "Crear simulador de árbol ternario",
     "description": null,
-    "status": "IN-PROGRESS",
+    "status": "IN_PROGRESS",
     "createdAt": "2025-12-05T08:30:00",
     "updatedAt": null,
     "dueDate": null,
@@ -686,7 +686,7 @@
   {
     "title": "Crear sistema de autenticación con reconocimiento facial",
     "description": "Debe incluir entrenamiento y verificación.",
-    "status": "IN-PROGRESS",
+    "status": "IN_PROGRESS",
     "createdAt": "2025-12-08T11:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -713,7 +713,7 @@
   {
     "title": "Crear simulador de grafo ponderado",
     "description": null,
-    "status": "IN-PROGRESS",
+    "status": "IN_PROGRESS",
     "createdAt": "2025-12-11T10:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -758,7 +758,7 @@
   {
     "title": "Diseñar lógica de control de energía solar",
     "description": "Usar paneles y sensores.",
-    "status": "IN-PROGRESS",
+    "status": "IN_PROGRESS",
     "createdAt": "2025-12-16T11:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -785,7 +785,7 @@
   {
     "title": "Diseñar sistema de control de acceso por huella",
     "description": null,
-    "status": "IN-PROGRESS",
+    "status": "IN_PROGRESS",
     "createdAt": "2025-12-19T10:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -812,7 +812,7 @@
   {
     "title": "Crear sistema de autenticación con código único",
     "description": "Debe incluir expiración y reenvío.",
-    "status": "IN-PROGRESS",
+    "status": "IN_PROGRESS",
     "createdAt": "2025-12-22T09:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -839,7 +839,7 @@
   {
     "title": "Crear simulador de árbol binario completo",
     "description": null,
-    "status": "IN-PROGRESS",
+    "status": "IN_PROGRESS",
     "createdAt": "2025-12-25T08:30:00",
     "updatedAt": null,
     "dueDate": null,

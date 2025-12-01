@@ -1,59 +1,17 @@
-const readline = require('readline');
-
-interface Task {
-  title: string;
-  description: string;
-  difficulty: number;
-  status: number;
-}
-
+import readline from 'readline';
+import { TaskManager } from './TaskManager.ts';
+import { Task } from './Task.ts';
+import MSG from './messages.json' with { type: 'json' };
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
 
-
-
-const TaskManager1 = new TaskManager();
-
-// mensajes
-const MENU_MSG =
-  '\nQue deseas hacer?\n \n[1] Ver mis tareas.\n[2] Buscar mis tareas.\n[3] Agregar una tarea.\n[0] Salir.\n-->';
-
-const SHOW_LIST_MSG =
-  '\nQue tareas deseas ver?\n \n[1] Todas. \n[2] Pendientes. \n[3] En curso. \n[4] Terminadas. \n[0] Volver.\n-->';
-
-const SELECT_TASK_MSG =
-  '\nDeseas ver los detalles de alguna?\nIntroduce el numero para verla o 0 para volver\n-->';
-
-const EDIT_SELECTED_MSG =
-  '\nSi deseas editarla, presiona E, o presiona 0 para volver\n-->';
-
-const SEARCH_MSG = 'Introduce el titulo de una tarea para buscarla:\n--> ';
-
-const TITLE_MSG = '0. Ingresa un titulo: -->';
-const DESC_MSG = '1. Ingresa la descripcion: -->';
-const STATUS_MSG =
-  '2. Estado ([1] Pendiente  /  [2] En curso  /  [3] Terminado  /  [4] Cancelada): -->';
-const DIFF_MSG = '3. Dificultad ([1]  /  [2]  /  [3]): -->';
+const taskManager = new TaskManager();
+const tasks = taskManager.tasks;
 
 function ask(question: string): Promise<string> {
   return new Promise((resolve) => rl.question(question, resolve));
-}
-
-function getStatus(status_number: number): string {
-  switch (status_number) {
-    case 1:
-      return 'Pendiente';
-    case 2:
-      return 'En curso';
-    case 3:
-      return 'Terminado';
-    case 4:
-      return 'Cancelado';
-    default:
-      return 'Desconocido';
-  }
 }
 
 function getDifficulty(difficulty_number: number): string {
@@ -69,6 +27,50 @@ function getDifficulty(difficulty_number: number): string {
   }
 }
 
+//estadisticas
+function showStats(tasks: Task[]): void {
+  const stats = getStats(tasks);
+  const pending = (stats.pending * stats.total) / 100;
+  const onCourse = (stats.onCourse * stats.total) / 100;
+  const finished = (stats.finished * stats.total) / 100;
+  const canceled = (stats.canceled * stats.total) / 100;
+
+  console.log(
+    '\nEstadísticas de tareas:\n--> Total de tareas:',
+    stats.total,
+    '\n--> Tareas pendientes:',
+    stats.pending,
+    '//',
+    pending,
+    '%',
+    '\n--> Tareas en curso:',
+    stats.onCourse,
+    '//',
+    onCourse,
+    '%',
+    '\n--> Tareas finalizadas:',
+    stats.finished,
+    '//',
+    finished,
+    '%',
+    '\n--> Tareas canceladas:',
+    stats.canceled,
+    '//',
+    canceled,
+    '%',
+    '\n'
+  );
+}
+
+function getStats(tasks: Task[]) {
+  return {
+    total: tasks.length,
+    pending: tasks.filter((t) => t.status === 'PENDING').length,
+    onCourse: tasks.filter((t) => t.status === 'IN_PROGRESS').length,
+    finished: tasks.filter((t) => t.status === 'FINISHED').length,
+    canceled: tasks.filter((t) => t.status === 'CANCELED').length,
+  };
+}
 // editar tarea
 async function editTask(taskID: number): Promise<void> {
   const task = tasks[taskID];
@@ -265,7 +267,7 @@ async function addTask(): Promise<void> {
 }
 
 async function menu(): Promise<void> {
-  const menu_option = await ask(MENU_MSG);
+  const menu_option = await ask(MSG.MENU_MSG);
 
   switch (menu_option) {
     case '1':
@@ -276,6 +278,9 @@ async function menu(): Promise<void> {
       break;
     case '3':
       await addTask();
+      break;
+    case '4':
+      showStats(tasks);
       break;
     case '0':
       rl.close();
