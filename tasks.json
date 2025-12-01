@@ -2,7 +2,7 @@
   {
     "title": "Diseñar algoritmo de ordenamiento",
     "description": "Implementar y comparar bubble sort y quicksort.",
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-10-01T09:00:00",
     "updatedAt": "2025-10-01T09:00:00",
     "dueDate": "2025-10-15T23:59:00",
@@ -11,7 +11,7 @@
   {
     "title": "Configurar red local IPv4",
     "description": null,
-    "state": "IN-PROGRESS",
+    "status": "IN-PROGRESS",
     "createdAt": "2025-10-02T10:30:00",
     "updatedAt": null,
     "dueDate": null,
@@ -20,7 +20,7 @@
   {
     "title": "Crear API RESTful en Node.js",
     "description": "Debe incluir rutas GET, POST, PUT y DELETE.",
-    "state": "FINISHED",
+    "status": "FINISHED",
     "createdAt": "2025-09-28T14:45:00",
     "updatedAt": "2025-10-03T11:00:00",
     "dueDate": null,
@@ -29,7 +29,7 @@
   {
     "title": "Simular circuito lógico con compuertas AND y OR",
     "description": null,
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-10-04T08:15:00",
     "updatedAt": null,
     "dueDate": "2025-10-20T23:59:00",
@@ -38,7 +38,7 @@
   {
     "title": "Documentar estructura de datos Árbol Binario",
     "description": "Explicar inserción, búsqueda y recorrido in-order.",
-    "state": "CANCELED",
+    "status": "CANCELED",
     "createdAt": "2025-09-30T16:00:00",
     "updatedAt": "2025-10-01T12:00:00",
     "dueDate": null,
@@ -47,7 +47,7 @@
   {
     "title": "Implementar búsqueda binaria",
     "description": "Función en Java que reciba un arreglo ordenado y un valor objetivo.",
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-10-05T10:00:00",
     "updatedAt": null,
     "dueDate": "2025-10-18T23:59:00",
@@ -56,7 +56,7 @@
   {
     "title": "Simular protocolo TCP",
     "description": null,
-    "state": "IN-PROGRESS",
+    "status": "IN-PROGRESS",
     "createdAt": "2025-10-06T11:30:00",
     "updatedAt": null,
     "dueDate": null,
@@ -65,7 +65,7 @@
   {
     "title": "Crear diagrama de flujo para login",
     "description": "Debe incluir validación de usuario y contraseña.",
-    "state": "FINISHED",
+    "status": "FINISHED",
     "createdAt": "2025-09-25T09:00:00",
     "updatedAt": "2025-09-26T10:00:00",
     "dueDate": null,
@@ -74,7 +74,7 @@
   {
     "title": "Analizar complejidad de algoritmo de búsqueda lineal",
     "description": null,
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-10-07T08:45:00",
     "updatedAt": null,
     "dueDate": "2025-10-21T23:59:00",
@@ -83,7 +83,7 @@
   {
     "title": "Configurar servidor DHCP",
     "description": "Asignación automática de IPs en red local.",
-    "state": "CANCELED",
+    "status": "CANCELED",
     "createdAt": "2025-09-29T14:00:00",
     "updatedAt": "2025-10-01T09:00:00",
     "dueDate": null,
@@ -92,7 +92,7 @@
   {
     "title": "Crear simulador de pila",
     "description": null,
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-10-08T10:00:00",
     "updatedAt": null,
     "dueDate": "2025-10-22T23:59:00",
@@ -101,7 +101,7 @@
   {
     "title": "Diseñar base de datos para biblioteca",
     "description": "Debe incluir libros, autores y préstamos.",
-    "state": "IN-PROGRESS",
+    "status": "IN-PROGRESS",
     "createdAt": "2025-10-09T11:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -110,7 +110,7 @@
   {
     "title": "Implementar validación de formularios en HTML",
     "description": null,
-    "state": "FINISHED",
+    "status": "FINISHED",
     "createdAt": "2025-09-27T13:00:00",
     "updatedAt": "2025-09-28T14:00:00",
     "dueDate": null,
@@ -119,7 +119,7 @@
   {
     "title": "Simular algoritmo de Dijkstra",
     "description": "Encontrar el camino más corto en un grafo.",
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-10-10T09:30:00",
     "updatedAt": null,
     "dueDate": "2025-10-25T23:59:00",
@@ -128,7 +128,7 @@
   {
     "title": "Crear estructura de datos Cola",
     "description": null,
-    "state": "IN-PROGRESS",
+    "status": "IN-PROGRESS",
     "createdAt": "2025-10-11T10:15:00",
     "updatedAt": null,
     "dueDate": null,
@@ -137,7 +137,7 @@
   {
     "title": "Diseñar interfaz gráfica para calculadora",
     "description": "Debe incluir operaciones básicas.",
-    "state": "FINISHED",
+    "status": "FINISHED",
     "createdAt": "2025-09-26T15:00:00",
     "updatedAt": "2025-09-27T10:00:00",
     "dueDate": null,
@@ -146,7 +146,7 @@
   {
     "title": "Configurar NAT en router doméstico",
     "description": null,
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-10-12T08:30:00",
     "updatedAt": null,
     "dueDate": "2025-10-26T23:59:00",
@@ -155,7 +155,7 @@
   {
     "title": "Crear documentación técnica de proyecto",
     "description": "Debe incluir objetivos, herramientas y resultados.",
-    "state": "CANCELED",
+    "status": "CANCELED",
     "createdAt": "2025-09-28T16:00:00",
     "updatedAt": "2025-10-02T12:00:00",
     "dueDate": null,
@@ -164,7 +164,7 @@
   {
     "title": "Simular red con topología estrella",
     "description": null,
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-10-13T09:00:00",
     "updatedAt": null,
     "dueDate": "2025-10-27T23:59:00",
@@ -173,7 +173,7 @@
   {
     "title": "Implementar CRUD en PHP",
     "description": "Debe incluir conexión a MySQL.",
-    "state": "IN-PROGRESS",
+    "status": "IN-PROGRESS",
     "createdAt": "2025-10-14T10:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -182,7 +182,7 @@
   {
     "title": "Crear script de backup automático",
     "description": null,
-    "state": "FINISHED",
+    "status": "FINISHED",
     "createdAt": "2025-09-29T11:00:00",
     "updatedAt": "2025-09-30T12:00:00",
     "dueDate": null,
@@ -191,7 +191,7 @@
   {
     "title": "Diseñar lógica de semáforo con Arduino",
     "description": "Usar LEDs y temporizador.",
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-10-15T08:45:00",
     "updatedAt": null,
     "dueDate": "2025-10-28T23:59:00",
@@ -200,7 +200,7 @@
   {
     "title": "Simular ataque de denegación de servicio",
     "description": null,
-    "state": "CANCELED",
+    "status": "CANCELED",
     "createdAt": "2025-09-30T14:00:00",
     "updatedAt": "2025-10-01T15:00:00",
     "dueDate": null,
@@ -209,7 +209,7 @@
   {
     "title": "Crear plantilla de informe técnico",
     "description": "Debe incluir portada, índice y conclusiones.",
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-10-16T09:30:00",
     "updatedAt": null,
     "dueDate": "2025-10-29T23:59:00",
@@ -218,7 +218,7 @@
   {
     "title": "Diseñar sistema de login con sesiones",
     "description": null,
-    "state": "IN-PROGRESS",
+    "status": "IN-PROGRESS",
     "createdAt": "2025-10-17T10:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -227,7 +227,7 @@
   {
     "title": "Crear dashboard con gráficos en JavaScript",
     "description": "Usar Chart.js para representar datos de ventas.",
-    "state": "FINISHED",
+    "status": "FINISHED",
     "createdAt": "2025-10-18T09:00:00",
     "updatedAt": "2025-10-19T10:00:00",
     "dueDate": null,
@@ -236,7 +236,7 @@
   {
     "title": "Simular red con topología en anillo",
     "description": null,
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-10-19T10:30:00",
     "updatedAt": null,
     "dueDate": "2025-10-30T23:59:00",
@@ -245,7 +245,7 @@
   {
     "title": "Crear script de instalación automática",
     "description": "Debe instalar dependencias y configurar entorno.",
-    "state": "IN-PROGRESS",
+    "status": "IN-PROGRESS",
     "createdAt": "2025-10-20T11:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -254,7 +254,7 @@
   {
     "title": "Diseñar lógica de semáforo peatonal",
     "description": null,
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-10-21T08:45:00",
     "updatedAt": null,
     "dueDate": "2025-11-01T23:59:00",
@@ -263,7 +263,7 @@
   {
     "title": "Documentar funciones de módulo de seguridad",
     "description": "Incluir firma digital y cifrado.",
-    "state": "CANCELED",
+    "status": "CANCELED",
     "createdAt": "2025-10-22T09:30:00",
     "updatedAt": "2025-10-23T10:00:00",
     "dueDate": null,
@@ -272,7 +272,7 @@
   {
     "title": "Simular red con topología árbol",
     "description": null,
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-10-23T10:15:00",
     "updatedAt": null,
     "dueDate": "2025-11-02T23:59:00",
@@ -281,7 +281,7 @@
   {
     "title": "Implementar login con tokens JWT",
     "description": "Debe incluir expiración y verificación.",
-    "state": "IN-PROGRESS",
+    "status": "IN-PROGRESS",
     "createdAt": "2025-10-24T11:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -290,7 +290,7 @@
   {
     "title": "Crear simulador de memoria RAM",
     "description": null,
-    "state": "FINISHED",
+    "status": "FINISHED",
     "createdAt": "2025-10-25T09:00:00",
     "updatedAt": "2025-10-26T10:00:00",
     "dueDate": null,
@@ -299,7 +299,7 @@
   {
     "title": "Diseñar lógica de control de acceso",
     "description": "Usar RFID y base de datos.",
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-10-26T10:30:00",
     "updatedAt": null,
     "dueDate": "2025-11-03T23:59:00",
@@ -308,7 +308,7 @@
   {
     "title": "Configurar servidor web Apache",
     "description": null,
-    "state": "IN-PROGRESS",
+    "status": "IN-PROGRESS",
     "createdAt": "2025-10-27T11:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -317,7 +317,7 @@
   {
     "title": "Crear simulador de cola circular",
     "description": "Debe permitir inserción y extracción.",
-    "state": "FINISHED",
+    "status": "FINISHED",
     "createdAt": "2025-10-28T08:45:00",
     "updatedAt": "2025-10-29T09:30:00",
     "dueDate": null,
@@ -326,7 +326,7 @@
   {
     "title": "Diseñar sistema de reservas online",
     "description": null,
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-10-29T09:00:00",
     "updatedAt": null,
     "dueDate": "2025-11-04T23:59:00",
@@ -335,7 +335,7 @@
   {
     "title": "Documentar arquitectura cliente-servidor",
     "description": "Incluir ejemplos y diagramas.",
-    "state": "CANCELED",
+    "status": "CANCELED",
     "createdAt": "2025-10-30T10:00:00",
     "updatedAt": "2025-10-31T11:00:00",
     "dueDate": null,
@@ -344,7 +344,7 @@
   {
     "title": "Simular red con topología mixta",
     "description": null,
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-10-31T11:30:00",
     "updatedAt": null,
     "dueDate": "2025-11-05T23:59:00",
@@ -353,7 +353,7 @@
   {
     "title": "Crear sistema de autenticación con OAuth2",
     "description": "Debe incluir scopes y refresh tokens.",
-    "state": "IN-PROGRESS",
+    "status": "IN-PROGRESS",
     "createdAt": "2025-11-01T08:30:00",
     "updatedAt": null,
     "dueDate": null,
@@ -362,7 +362,7 @@
   {
     "title": "Diseñar lógica de control de temperatura",
     "description": null,
-    "state": "FINISHED",
+    "status": "FINISHED",
     "createdAt": "2025-11-02T09:00:00",
     "updatedAt": "2025-11-03T10:00:00",
     "dueDate": null,
@@ -371,7 +371,7 @@
   {
     "title": "Configurar servidor FTP",
     "description": "Permitir acceso anónimo y autenticado.",
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-11-03T10:30:00",
     "updatedAt": null,
     "dueDate": "2025-11-06T23:59:00",
@@ -380,7 +380,7 @@
   {
     "title": "Crear simulador de árbol AVL",
     "description": null,
-    "state": "IN-PROGRESS",
+    "status": "IN-PROGRESS",
     "createdAt": "2025-11-04T11:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -389,7 +389,7 @@
   {
     "title": "Diseñar sistema de control de inventario",
     "description": "Debe incluir alertas de stock bajo.",
-    "state": "FINISHED",
+    "status": "FINISHED",
     "createdAt": "2025-11-05T08:45:00",
     "updatedAt": "2025-11-06T09:30:00",
     "dueDate": null,
@@ -398,7 +398,7 @@
   {
     "title": "Simular red con topología bus",
     "description": null,
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-11-06T09:00:00",
     "updatedAt": null,
     "dueDate": "2025-11-07T23:59:00",
@@ -406,8 +406,8 @@
   },
   {
     "title": "Documentar protocolo HTTP",
-    "description": "Incluir métodos y códigos de state.",
-    "state": "CANCELED",
+    "description": "Incluir métodos y códigos de status.",
+    "status": "CANCELED",
     "createdAt": "2025-11-07T10:00:00",
     "updatedAt": "2025-11-08T11:00:00",
     "dueDate": null,
@@ -416,7 +416,7 @@
   {
     "title": "Crear simulador de heap binario",
     "description": null,
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-11-08T11:30:00",
     "updatedAt": null,
     "dueDate": "2025-11-09T23:59:00",
@@ -425,7 +425,7 @@
   {
     "title": "Diseñar lógica de control de humedad",
     "description": "Usar sensor y actuador.",
-    "state": "IN-PROGRESS",
+    "status": "IN-PROGRESS",
     "createdAt": "2025-11-09T08:30:00",
     "updatedAt": null,
     "dueDate": null,
@@ -434,7 +434,7 @@
   {
     "title": "Configurar servidor DNS",
     "description": null,
-    "state": "FINISHED",
+    "status": "FINISHED",
     "createdAt": "2025-11-10T09:00:00",
     "updatedAt": "2025-11-11T10:00:00",
     "dueDate": null,
@@ -443,7 +443,7 @@
   {
     "title": "Crear simulador de grafo dirigido",
     "description": "Debe permitir ciclos y pesos.",
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-11-11T10:30:00",
     "updatedAt": null,
     "dueDate": "2025-11-12T23:59:00",
@@ -452,7 +452,7 @@
   {
     "title": "Diseñar lógica de control de iluminación",
     "description": "Usar sensor de luz y relé.",
-    "state": "IN-PROGRESS",
+    "status": "IN-PROGRESS",
     "createdAt": "2025-11-12T09:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -461,7 +461,7 @@
   {
     "title": "Configurar servidor proxy",
     "description": null,
-    "state": "FINISHED",
+    "status": "FINISHED",
     "createdAt": "2025-11-13T10:00:00",
     "updatedAt": "2025-11-14T11:00:00",
     "dueDate": null,
@@ -470,7 +470,7 @@
   {
     "title": "Crear simulador de árbol B",
     "description": "Debe permitir inserción, búsqueda y eliminación.",
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-11-14T11:30:00",
     "updatedAt": null,
     "dueDate": "2025-11-15T23:59:00",
@@ -479,7 +479,7 @@
   {
     "title": "Diseñar sistema de control de acceso RFID",
     "description": null,
-    "state": "IN-PROGRESS",
+    "status": "IN-PROGRESS",
     "createdAt": "2025-11-15T08:30:00",
     "updatedAt": null,
     "dueDate": null,
@@ -488,7 +488,7 @@
   {
     "title": "Documentar protocolo TCP/IP",
     "description": "Incluir capas y funciones.",
-    "state": "CANCELED",
+    "status": "CANCELED",
     "createdAt": "2025-11-16T09:00:00",
     "updatedAt": "2025-11-17T10:00:00",
     "dueDate": null,
@@ -497,7 +497,7 @@
   {
     "title": "Simular red con topología híbrida",
     "description": null,
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-11-17T10:30:00",
     "updatedAt": null,
     "dueDate": "2025-11-18T23:59:00",
@@ -506,7 +506,7 @@
   {
     "title": "Crear sistema de autenticación biométrica",
     "description": "Usar huella digital.",
-    "state": "IN-PROGRESS",
+    "status": "IN-PROGRESS",
     "createdAt": "2025-11-18T11:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -515,7 +515,7 @@
   {
     "title": "Diseñar lógica de control de velocidad",
     "description": null,
-    "state": "FINISHED",
+    "status": "FINISHED",
     "createdAt": "2025-11-19T08:45:00",
     "updatedAt": "2025-11-20T09:30:00",
     "dueDate": null,
@@ -524,7 +524,7 @@
   {
     "title": "Configurar servidor de correo electrónico",
     "description": "Usar SMTP y POP3.",
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-11-20T09:00:00",
     "updatedAt": null,
     "dueDate": "2025-11-21T23:59:00",
@@ -533,7 +533,7 @@
   {
     "title": "Crear simulador de árbol rojo-negro",
     "description": null,
-    "state": "IN-PROGRESS",
+    "status": "IN-PROGRESS",
     "createdAt": "2025-11-21T10:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -542,7 +542,7 @@
   {
     "title": "Diseñar sistema de control de riego",
     "description": "Usar sensor de humedad y válvula.",
-    "state": "FINISHED",
+    "status": "FINISHED",
     "createdAt": "2025-11-22T11:30:00",
     "updatedAt": "2025-11-23T12:00:00",
     "dueDate": null,
@@ -551,7 +551,7 @@
   {
     "title": "Simular red con topología mesh",
     "description": null,
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-11-23T08:30:00",
     "updatedAt": null,
     "dueDate": "2025-11-24T23:59:00",
@@ -560,7 +560,7 @@
   {
     "title": "Documentar protocolo UDP",
     "description": "Incluir características y diferencias con TCP.",
-    "state": "CANCELED",
+    "status": "CANCELED",
     "createdAt": "2025-11-24T09:00:00",
     "updatedAt": "2025-11-25T10:00:00",
     "dueDate": null,
@@ -569,7 +569,7 @@
   {
     "title": "Crear simulador de grafo no dirigido",
     "description": null,
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-11-25T10:30:00",
     "updatedAt": null,
     "dueDate": "2025-11-26T23:59:00",
@@ -578,7 +578,7 @@
   {
     "title": "Diseñar lógica de control de presión",
     "description": "Usar sensor y válvula.",
-    "state": "IN-PROGRESS",
+    "status": "IN-PROGRESS",
     "createdAt": "2025-11-26T11:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -587,7 +587,7 @@
   {
     "title": "Configurar servidor NTP",
     "description": null,
-    "state": "FINISHED",
+    "status": "FINISHED",
     "createdAt": "2025-11-27T08:45:00",
     "updatedAt": "2025-11-28T09:30:00",
     "dueDate": null,
@@ -596,7 +596,7 @@
   {
     "title": "Crear simulador de árbol binario de búsqueda",
     "description": "Debe permitir recorrido in-order.",
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-11-28T09:00:00",
     "updatedAt": null,
     "dueDate": "2025-11-29T23:59:00",
@@ -605,7 +605,7 @@
   {
     "title": "Diseñar sistema de control de temperatura ambiente",
     "description": null,
-    "state": "IN-PROGRESS",
+    "status": "IN-PROGRESS",
     "createdAt": "2025-11-29T10:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -614,7 +614,7 @@
   {
     "title": "Documentar arquitectura de microservicios",
     "description": "Incluir ventajas y ejemplos.",
-    "state": "CANCELED",
+    "status": "CANCELED",
     "createdAt": "2025-11-30T11:30:00",
     "updatedAt": "2025-12-01T12:00:00",
     "dueDate": null,
@@ -623,7 +623,7 @@
   {
     "title": "Simular red con topología punto a punto",
     "description": null,
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-12-01T08:30:00",
     "updatedAt": null,
     "dueDate": "2025-12-02T23:59:00",
@@ -632,7 +632,7 @@
   {
     "title": "Crear sistema de autenticación con PIN",
     "description": "Debe incluir bloqueo por intentos fallidos.",
-    "state": "IN-PROGRESS",
+    "status": "IN-PROGRESS",
     "createdAt": "2025-12-02T09:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -641,7 +641,7 @@
   {
     "title": "Diseñar lógica de control de ventilación",
     "description": null,
-    "state": "FINISHED",
+    "status": "FINISHED",
     "createdAt": "2025-12-03T10:00:00",
     "updatedAt": "2025-12-04T11:00:00",
     "dueDate": null,
@@ -650,7 +650,7 @@
   {
     "title": "Configurar servidor SSH",
     "description": "Permitir acceso remoto seguro.",
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-12-04T11:30:00",
     "updatedAt": null,
     "dueDate": "2025-12-05T23:59:00",
@@ -659,7 +659,7 @@
   {
     "title": "Crear simulador de árbol ternario",
     "description": null,
-    "state": "IN-PROGRESS",
+    "status": "IN-PROGRESS",
     "createdAt": "2025-12-05T08:30:00",
     "updatedAt": null,
     "dueDate": null,
@@ -668,7 +668,7 @@
   {
     "title": "Diseñar sistema de control de acceso por código QR",
     "description": "Debe incluir escaneo y validación.",
-    "state": "FINISHED",
+    "status": "FINISHED",
     "createdAt": "2025-12-06T09:00:00",
     "updatedAt": "2025-12-07T10:00:00",
     "dueDate": null,
@@ -677,7 +677,7 @@
   {
     "title": "Simular red con topología cliente-servidor",
     "description": null,
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-12-07T10:30:00",
     "updatedAt": null,
     "dueDate": "2025-12-08T23:59:00",
@@ -686,7 +686,7 @@
   {
     "title": "Crear sistema de autenticación con reconocimiento facial",
     "description": "Debe incluir entrenamiento y verificación.",
-    "state": "IN-PROGRESS",
+    "status": "IN-PROGRESS",
     "createdAt": "2025-12-08T11:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -695,7 +695,7 @@
   {
     "title": "Diseñar lógica de control de nivel de agua",
     "description": null,
-    "state": "FINISHED",
+    "status": "FINISHED",
     "createdAt": "2025-12-09T08:45:00",
     "updatedAt": "2025-12-10T09:30:00",
     "dueDate": null,
@@ -704,7 +704,7 @@
   {
     "title": "Configurar servidor VPN",
     "description": "Permitir conexión remota segura.",
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-12-10T09:00:00",
     "updatedAt": null,
     "dueDate": "2025-12-11T23:59:00",
@@ -713,7 +713,7 @@
   {
     "title": "Crear simulador de grafo ponderado",
     "description": null,
-    "state": "IN-PROGRESS",
+    "status": "IN-PROGRESS",
     "createdAt": "2025-12-11T10:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -722,7 +722,7 @@
   {
     "title": "Diseñar sistema de control de acceso por tarjeta",
     "description": "Debe incluir lectura y registro.",
-    "state": "FINISHED",
+    "status": "FINISHED",
     "createdAt": "2025-12-12T11:30:00",
     "updatedAt": "2025-12-13T12:00:00",
     "dueDate": null,
@@ -731,7 +731,7 @@
   {
     "title": "Simular red con topología distribuida",
     "description": null,
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-12-13T08:30:00",
     "updatedAt": null,
     "dueDate": "2025-12-14T23:59:00",
@@ -740,7 +740,7 @@
   {
     "title": "Documentar protocolo ICMP",
     "description": "Incluir funciones y tipos de mensajes.",
-    "state": "CANCELED",
+    "status": "CANCELED",
     "createdAt": "2025-12-14T09:00:00",
     "updatedAt": "2025-12-15T10:00:00",
     "dueDate": null,
@@ -749,7 +749,7 @@
   {
     "title": "Crear simulador de árbol binario balanceado",
     "description": null,
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-12-15T10:30:00",
     "updatedAt": null,
     "dueDate": "2025-12-16T23:59:00",
@@ -758,7 +758,7 @@
   {
     "title": "Diseñar lógica de control de energía solar",
     "description": "Usar paneles y sensores.",
-    "state": "IN-PROGRESS",
+    "status": "IN-PROGRESS",
     "createdAt": "2025-12-16T11:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -767,7 +767,7 @@
   {
     "title": "Configurar servidor de base de datos PostgreSQL",
     "description": null,
-    "state": "FINISHED",
+    "status": "FINISHED",
     "createdAt": "2025-12-17T08:45:00",
     "updatedAt": "2025-12-18T09:30:00",
     "dueDate": null,
@@ -776,7 +776,7 @@
   {
     "title": "Crear simulador de grafo dirigido acíclico",
     "description": "Debe permitir ordenamiento topológico.",
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-12-18T09:00:00",
     "updatedAt": null,
     "dueDate": "2025-12-19T23:59:00",
@@ -785,7 +785,7 @@
   {
     "title": "Diseñar sistema de control de acceso por huella",
     "description": null,
-    "state": "IN-PROGRESS",
+    "status": "IN-PROGRESS",
     "createdAt": "2025-12-19T10:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -794,7 +794,7 @@
   {
     "title": "Documentar arquitectura de sistemas distribuidos",
     "description": "Incluir ejemplos y ventajas.",
-    "state": "CANCELED",
+    "status": "CANCELED",
     "createdAt": "2025-12-20T11:30:00",
     "updatedAt": "2025-12-21T12:00:00",
     "dueDate": null,
@@ -803,7 +803,7 @@
   {
     "title": "Simular red con topología lógica",
     "description": null,
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-12-21T08:30:00",
     "updatedAt": null,
     "dueDate": "2025-12-22T23:59:00",
@@ -812,7 +812,7 @@
   {
     "title": "Crear sistema de autenticación con código único",
     "description": "Debe incluir expiración y reenvío.",
-    "state": "IN-PROGRESS",
+    "status": "IN-PROGRESS",
     "createdAt": "2025-12-22T09:00:00",
     "updatedAt": null,
     "dueDate": null,
@@ -821,7 +821,7 @@
   {
     "title": "Diseñar lógica de control de carga eléctrica",
     "description": null,
-    "state": "FINISHED",
+    "status": "FINISHED",
     "createdAt": "2025-12-23T10:00:00",
     "updatedAt": "2025-12-24T11:00:00",
     "dueDate": null,
@@ -830,7 +830,7 @@
   {
     "title": "Configurar servidor de archivos Samba",
     "description": "Permitir acceso compartido en red local.",
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-12-24T11:30:00",
     "updatedAt": null,
     "dueDate": "2025-12-25T23:59:00",
@@ -839,7 +839,7 @@
   {
     "title": "Crear simulador de árbol binario completo",
     "description": null,
-    "state": "IN-PROGRESS",
+    "status": "IN-PROGRESS",
     "createdAt": "2025-12-25T08:30:00",
     "updatedAt": null,
     "dueDate": null,
@@ -848,7 +848,7 @@
   {
     "title": "Diseñar sistema de control de acceso por NFC",
     "description": "Debe incluir lectura y validación.",
-    "state": "FINISHED",
+    "status": "FINISHED",
     "createdAt": "2025-12-26T09:00:00",
     "updatedAt": "2025-12-27T10:00:00",
     "dueDate": null,
@@ -857,7 +857,7 @@
   {
     "title": "Simular red con topología física",
     "description": null,
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-12-27T10:30:00",
     "updatedAt": null,
     "dueDate": "2025-12-28T23:59:00",
@@ -866,7 +866,7 @@
   {
     "title": "Documentar protocolo ARP",
     "description": "Incluir resolución de direcciones.",
-    "state": "CANCELED",
+    "status": "CANCELED",
     "createdAt": "2025-12-28T11:00:00",
     "updatedAt": "2025-12-29T12:00:00",
     "dueDate": null,
@@ -875,7 +875,7 @@
   {
     "title": "Crear simulador de árbol binario perfecto",
     "description": null,
-    "state": "PENDING",
+    "status": "PENDING",
     "createdAt": "2025-12-29T08:45:00",
     "updatedAt": null,
     "dueDate": "2025-12-30T23:59:00",
