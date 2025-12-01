@@ -1,5 +1,5 @@
 const readline = require('readline');
-
+import Tasks from './tasks.json' assert { type: 'json' };
 interface Task {
   title: string;
   description: string;
@@ -205,9 +205,6 @@ async function searchTask(): Promise<void> {
     return;
   }
 
-  const difficulty = getDifficulty(taskSelected.difficulty);
-  const status = getStatus(taskSelected.status);
-
   console.log(
     '\nEsta es la tarea que elegiste:\n',
     taskSelected.title,
@@ -215,10 +212,10 @@ async function searchTask(): Promise<void> {
     taskSelected.description,
     '\n',
     'Estado: ',
-    status,
+    taskSelected.status,
     '\n',
     'Dificultad: ',
-    difficulty,
+    taskSelected.difficulty,
     '\n'
   );
 
