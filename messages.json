@@ -3,6 +3,7 @@
   "SHOW_LIST_MSG": "\nQue tareas deseas ver?\n \n[1] Todas. \n[2] Pendientes. \n[3] En curso. \n[4] Terminadas. \n[0] Volver.\n-->",
   "SELECT_TASK_MSG": "\nDeseas ver los detalles de alguna?\nIntroduce el numero para verla o 0 para volver\n-->",
   "EDIT_SELECTED_MSG": "\nSi deseas editarla, presiona E, o presiona 0 para volver\n-->",
+  "TASK_ACTION_MSG": "\n¿Qué deseas hacer con esta tarea? (E = Editar, D = Borrar, 0 = Volver)\n-->",
   "SEARCH_MSG": "Introduce el titulo de una tarea para buscarla:\n--> ",
   "TITLE_MSG": "0. Ingresa un titulo: -->",
   "DESC_MSG": "1. Ingresa la descripcion: -->",

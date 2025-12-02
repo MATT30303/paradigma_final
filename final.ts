@@ -82,9 +82,13 @@ async function getStats(tasks: Task[]) {
 async function editTask(taskID: number): Promise<void> {
   await taskManager.editTask(taskID, ask);
 }
+//eliminar tarea
+async function deleteTask(taskID: number): Promise<void> {
+  await taskManager.deleteTask(taskID);
+}
 
 // filtro de tareas por estado o todos
-async function showTasksByStatus(statusFilter?: number): Promise<void> {
+async function showTasksByStatus(statusFilter?: any): Promise<void> {
   const filtered = statusFilter
     ? tasks.filter((t) => t.getStatus() === statusFilter)
     : tasks;
@@ -123,9 +127,16 @@ async function showTasksByStatus(statusFilter?: number): Promise<void> {
     '\n'
   );
 
-  const option = await ask(MSG.EDIT_SELECTED_MSG);
-  if (option.toLowerCase() === 'e') await editTask(tasks.indexOf(taskSelected));
+  const option = await ask(MSG.TASK_ACTION_MSG);
+  const index = tasks.indexOf(taskSelected);
+
+  if (option.toLowerCase() === 'e') {
+      await editTask(index);
+  } else if (option.toLowerCase() === 'd') {
+      await taskManager.deleteTask(index);
+  }
 }
+
 
 async function showAllTask() {
   await showTasksByStatus();
