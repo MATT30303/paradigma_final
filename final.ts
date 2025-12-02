@@ -72,33 +72,15 @@ function getStats(tasks: Task[]) {
     canceled: tasks.filter((t) => t.status === 'CANCELED').length,
   };
 }
+
+
+
 // editar tarea
 async function editTask(taskID: number): Promise<void> {
-  const task = tasks[taskID];
-
-  if (!task) {
-    console.log('No existe una tarea con ese ID.');
-    return;
-  }
-
-  console.log(`\nEstas editando la tarea "${task.title}"\n`);
-  console.log(
-    '- Si deseas mantener los valores de un atributo, simplemente dejalo en blanco.'
-  );
-  console.log('- Si deseas dejar en blanco un atributo, escribe un espacio');
-
-  const desc = await ask(DESC_MSG);
-  if (desc !== '') task.description = desc;
-
-  const status = await ask(STATUS_MSG);
-  if (status !== '') task.status = parseInt(status);
-
-  const diff = await ask(DIFF_MSG);
-  if (diff !== '') task.difficulty = parseInt(diff);
-
-  console.log('\n Datos guardados!');
-  await menu();
+  await taskManager.editTask(taskID, ask);
 }
+
+
 // vista de las tareas
 async function menuTasks(): Promise<void> {
   const showList_options = await ask(MSG.SHOW_LIST_MSG);

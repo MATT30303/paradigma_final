@@ -70,4 +70,49 @@ export class TaskManager {
         this.tasks.push(newTask);
         console.log('\n Datos guardados correctamente!');
     }
+
+    async editTask(taskID: number, ask: (msg: string) => Promise<string>): Promise<void> {
+        const task = this.tasks[taskID];
+
+        if (!task) {
+        console.log('No existe una tarea con ese ID.');
+        return;
+        }
+
+        console.log(`\nEstas editando la tarea "${task.title}"\n`);
+        console.log(
+        '- Si deseas mantener los valores de un atributo, simplemente dejalo en blanco.'
+        );
+        console.log('- Si deseas dejar en blanco un atributo, escribe un espacio');
+
+        const desc = await ask(MSG.DESC_MSG);
+        if (desc !== '') task.description = desc;
+
+        const status = await ask(MSG.STATUS_MSG);
+        if (status !== '') {
+        const num = parseInt(status);
+        switch (num) {
+            case 1:
+            task.status = 'PENDING';
+            break;
+            case 2:
+            task.status = 'IN_PROGRESS';
+            break;
+            case 3:
+            task.status = 'FINISHED';
+            break;
+            case 4:
+            task.status = 'CANCELED';
+            break;
+            default:
+            console.log('**Entrada incorrecta**');
+            break;
+        }
+        }
+
+        const diff = await ask(MSG.DIFF_MSG);
+        if (diff !== '') task.difficulty = parseInt(diff);
+
+        console.log('\nDatos guardados!');
+    }
 }
