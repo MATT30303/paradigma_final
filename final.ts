@@ -82,13 +82,38 @@ async function getStats(tasks: Task[]) {
 async function editTask(taskID: number): Promise<void> {
   await taskManager.editTask(taskID, ask);
 }
-//eliminar tarea
+
 async function deleteTask(taskID: number): Promise<void> {
   await taskManager.deleteTask(taskID);
 }
 
+// vista de las tareas
+async function menuTasks(): Promise<void> {
+  const showList_options = await ask(MSG.SHOW_LIST_MSG);
+
+  switch (showList_options) {
+    case '1':
+      await showAllTask();
+      break;
+    case '2':
+      await showPendingTask();
+      break;
+    case '3':
+      await showOnCourseTask();
+      break;
+    case '4':
+      await showDoneTask();
+      break;
+    case '0':
+      return;
+    default:
+      console.log('Opción inválida');
+      break;
+  }
+}
+
 // filtro de tareas por estado o todos
-async function showTasksByStatus(statusFilter?: any): Promise<void> {
+async function showTasksByStatus(statusFilter?: string): Promise<void> {
   const filtered = statusFilter
     ? tasks.filter((t) => t.getStatus() === statusFilter)
     : tasks;
@@ -142,28 +167,31 @@ async function showAllTask() {
   await showTasksByStatus();
 }
 async function showPendingTask() {
-  await showTasksByStatus(1);
+  await showTasksByStatus("PENDING");
 }
 async function showOnCourseTask() {
-  await showTasksByStatus(2);
+  await showTasksByStatus("IN_PROGRESS");
 }
 async function showDoneTask() {
-  await showTasksByStatus(3);
+  await showTasksByStatus("FINISHED");
+}
+async function showCanceledTask() {
+  await showTasksByStatus("CANCELED");
 }
 
 //ordenar tareas por titulo
 const sortByTitle = (tasks: Task[])=>
-  tasks.slice().sort((a, b) => a.title.localeCompare(b.title));
+  tasks.slice().sort((a, b) => a.getTitle().localeCompare(b.getTitle()));
 //ordenar tareas por fecha
 const sortByDueDate = (tasks: Task[]) =>
-  tasks.slice().sort((a, b) => new Date(a.dueDate).getTime() - new Date(b.dueDate).getTime());
+  tasks.slice().sort((a, b) => new Date(a.getDueDate()).getTime() - new Date(b.getDueDate()).getTime());
 //ordenar tareas por dificultad
 const sortByDifficulty = (tasks: Task[]) =>
-  tasks.slice().sort((a, b) => a.difficulty - b.difficulty);
+  tasks.slice().sort((a, b) => a.getDifficulty() - b.getDifficulty());
 
 //ordenar tareas por estado
 const sortByStatus = (tasks: Task[]) => 
-  tasks.slice().sort((a, b) => a.status.localeCompare(b.status));
+  tasks.slice().sort((a, b) => a.getStatus().localeCompare(b.getStatus()));
 
 
 function showTasks(tasks: Task[]): void {
@@ -175,12 +203,12 @@ function showTasks(tasks: Task[]): void {
 
   tasks.forEach((t, i) => {console.log(`
     [${i + 1}]
-    titulo: ${t.title}
-    descripcion: ${t.description}
-    estado: ${t.status}
-    creada en: ${t.dueDate}
-    vence en: ${t.dueDate}
-    dificultad: ${getDifficulty(t.difficulty)}
+    titulo: ${t.getTitle()}
+    descripcion: ${t.getDescription()}
+    estado: ${t.getStatus()}
+    creada en: ${t.getDueDate()}
+    vence en: ${t.getDueDate()}
+    dificultad: ${getDifficulty(t.getDifficulty())}
     -----------------------------`);
   });
 
@@ -203,6 +231,9 @@ async function viewTasks(): Promise<void> {
       break;
     case '4':
       await showDoneTask();
+      break;
+    case '5':
+      await showCanceledTask();
       break;
     case '0':
       return;
