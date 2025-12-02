@@ -101,7 +101,7 @@ async function editTask(taskID: number): Promise<void> {
 }
 // vista de las tareas
 async function menuTasks(): Promise<void> {
-  const showList_options = await ask(SHOW_LIST_MSG);
+  const showList_options = await ask(MSG.SHOW_LIST_MSG);
 
   switch (showList_options) {
     case '1':
@@ -124,7 +124,7 @@ async function menuTasks(): Promise<void> {
   }
 }
 
-async function showTasksByStatus(statusFilter?: number): Promise<void> {
+async function showTasksByStatus(statusFilter?: any): Promise<void> {
   const filtered = statusFilter
     ? tasks.filter((t) => t.status === statusFilter)
     : tasks;
@@ -137,7 +137,7 @@ async function showTasksByStatus(statusFilter?: number): Promise<void> {
   console.log('\nEstas son tus tareas:\n');
   filtered.forEach((t, i) => console.log(`[${i + 1}]`, t.title));
 
-  const taskID = parseInt(await ask(SELECT_TASK_MSG));
+  const taskID = parseInt(await ask(MSG.SELECT_TASK_MSG));
   if (taskID === 0) return;
 
   const taskSelected = filtered[taskID - 1];
@@ -147,7 +147,7 @@ async function showTasksByStatus(statusFilter?: number): Promise<void> {
   }
 
   const difficulty = getDifficulty(taskSelected.difficulty);
-  const status = getStatus(taskSelected.status);
+  const status = taskSelected.status;
 
   console.log(
     '\nEsta es la tarea que elegiste:\n',
@@ -163,7 +163,7 @@ async function showTasksByStatus(statusFilter?: number): Promise<void> {
     '\n'
   );
 
-  const option = await ask(EDIT_SELECTED_MSG);
+  const option = await ask(MSG.EDIT_SELECTED_MSG);
   if (option.toLowerCase() === 'e') await editTask(tasks.indexOf(taskSelected));
 }
 
@@ -182,7 +182,7 @@ async function showDoneTask() {
 
 // busqueda de tarea
 async function searchTask(): Promise<void> {
-  const search = await ask(SEARCH_MSG);
+  const search = await ask(MSG.SEARCH_MSG);
 
   const found = tasks.filter(
     (t) => t.title.toLowerCase() === search.toLowerCase()
@@ -197,7 +197,7 @@ async function searchTask(): Promise<void> {
     console.log(`[${i + 1}]`, t.title, '\t', t.description)
   );
 
-  const taskID = parseInt(await ask(SELECT_TASK_MSG));
+  const taskID = parseInt(await ask(MSG.SELECT_TASK_MSG));
   if (taskID === 0) return;
 
   const taskSelected = found[taskID - 1];
@@ -220,12 +220,12 @@ async function searchTask(): Promise<void> {
     '\n'
   );
 
-  const option = await ask(EDIT_SELECTED_MSG);
+  const option = await ask(MSG.EDIT_SELECTED_MSG);
   if (option.toLowerCase() === 'e') await editTask(tasks.indexOf(taskSelected));
 }
 
 async function addTask(): Promise<void> {
-  await taskManager.addTask(ask, MSG);
+  await taskManager.addTask(ask);
 }
 
 
