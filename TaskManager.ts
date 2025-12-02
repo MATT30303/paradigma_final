@@ -2,7 +2,18 @@ import { Task } from "./Task.ts";
 import tasksJson from "./tasks.json" with { type: "json" };
 import MSG from './messages.json' with { type: 'json' };
 export class TaskManager {
-    tasks: Task[] = tasksJson as Task[];
+    tasks: Task[] = tasksJson.map(
+    t => new Task(
+        t.title || '',
+        t.description || '',
+        t.status || 'PENDING',
+        t.createdAt || '',
+        t.updatedAt || '',
+        t.dueDate || '',
+        t.difficulty || 0
+    )
+    );
+
 
     async addTask(ask: (msg: string) => Promise<string>): Promise<void> {
         console.log('Estas creando una nueva tarea\nNO se permiten vacios');
@@ -114,6 +125,18 @@ export class TaskManager {
         if (diff !== '') task.setDifficulty(parseInt(diff));
 
         console.log('\nDatos guardados!');
+    }
+
+    async deleteTask(taskID: number): Promise<void> {
+        const task = this.tasks[taskID];
+        if (!task) {
+            console.log("No existe una tarea con ese ID.");
+            return;
+        }
+
+        this.tasks.splice(taskID, 1);
+
+        console.log("Tarea eliminada correctamente.");
     }
 }
 
