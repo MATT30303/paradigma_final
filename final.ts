@@ -279,6 +279,12 @@ async function searchTask(): Promise<void> {
     '\n',
     'Dificultad: ',
     taskSelected.getDifficulty(),
+    '\n',
+    'Creado en: ',
+    taskSelected.getCreatedAt(),
+    '\n',
+    'Vence en: ',
+    taskSelected.getDueDate(),
     '\n'
   );
 
