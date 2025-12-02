@@ -1,6 +1,8 @@
 import { Task } from "./Task.ts";
 import tasksJson from "./tasks.json" with { type: "json" };
 import MSG from './messages.json' with { type: 'json' };
+import { writeFileSync } from "fs";
+
 export class TaskManager {
     tasks: Task[] = tasksJson.map(
     t => new Task(
@@ -14,6 +16,11 @@ export class TaskManager {
     )
     );
 
+    saveToFile(path: string): void {
+        const json = JSON.stringify(this.tasks, null, 2);
+        writeFileSync(path, json);
+        console.log("Tareas guardadas en el archivo.");
+    }
 
     async addTask(ask: (msg: string) => Promise<string>): Promise<void> {
         console.log('Estas creando una nueva tarea\nNO se permiten vacios');
@@ -80,6 +87,8 @@ export class TaskManager {
 
         this.tasks.push(newTask);
         console.log('\n Datos guardados correctamente!');
+
+        this.saveToFile("./tasks.json");
     }
 
     async editTask(taskID: number, ask: (msg: string) => Promise<string>): Promise<void> {
@@ -101,30 +110,31 @@ export class TaskManager {
 
         const status = await ask(MSG.STATUS_MSG);
         if (status !== '') {
-        const num = parseInt(status);
-        switch (num) {
-            case 1:
-            task.setStatus('PENDING');
-            break;
-            case 2:
-            task.setStatus('IN_PROGRESS');
-            break;
-            case 3:
-            task.setStatus('FINISHED');
-            break;
-            case 4:
-            task.setStatus('CANCELED');
-            break;
-            default:
-            console.log('**Entrada incorrecta**');
-            break;
-        }
+            const num = parseInt(status);
+            switch (num) {
+                case 1:
+                task.setStatus('PENDING');
+                break;
+                case 2:
+                task.setStatus('IN_PROGRESS');
+                break;
+                case 3:
+                task.setStatus('FINISHED');
+                break;
+                case 4:
+                task.setStatus('CANCELED');
+                break;
+                default:
+                console.log('**Entrada incorrecta**');
+                break;
+            }
         }
 
         const diff = await ask(MSG.DIFF_MSG);
         if (diff !== '') task.setDifficulty(parseInt(diff));
 
         console.log('\nDatos guardados!');
+        this.saveToFile("./tasks.json");
     }
 
     async deleteTask(taskID: number): Promise<void> {
@@ -137,6 +147,7 @@ export class TaskManager {
         this.tasks.splice(taskID, 1);
 
         console.log("Tarea eliminada correctamente.");
+        this.saveToFile("./tasks.json");
     }
 }
 
