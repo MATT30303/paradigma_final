@@ -10,6 +10,7 @@ const rl = readline.createInterface({
 const taskManager = new TaskManager();
 const tasks = taskManager.tasks;
 
+
 function ask(question: string): Promise<string> {
   return new Promise((resolve) => rl.question(question, resolve));
 }
@@ -71,36 +72,18 @@ function getStats(tasks: Task[]) {
     canceled: tasks.filter((t) => t.status === 'CANCELED').length,
   };
 }
+
+
+
 // editar tarea
 async function editTask(taskID: number): Promise<void> {
-  const task = tasks[taskID];
-
-  if (!task) {
-    console.log('No existe una tarea con ese ID.');
-    return;
-  }
-
-  console.log(`\nEstas editando la tarea "${task.title}"\n`);
-  console.log(
-    '- Si deseas mantener los valores de un atributo, simplemente dejalo en blanco.'
-  );
-  console.log('- Si deseas dejar en blanco un atributo, escribe un espacio');
-
-  const desc = await ask(DESC_MSG);
-  if (desc !== '') task.description = desc;
-
-  const status = await ask(STATUS_MSG);
-  if (status !== '') task.status = parseInt(status);
-
-  const diff = await ask(DIFF_MSG);
-  if (diff !== '') task.difficulty = parseInt(diff);
-
-  console.log('\n Datos guardados!');
-  await menu();
+  await taskManager.editTask(taskID, ask);
 }
+
+
 // vista de las tareas
 async function menuTasks(): Promise<void> {
-  const showList_options = await ask(SHOW_LIST_MSG);
+  const showList_options = await ask(MSG.SHOW_LIST_MSG);
 
   switch (showList_options) {
     case '1':
@@ -123,7 +106,7 @@ async function menuTasks(): Promise<void> {
   }
 }
 
-async function showTasksByStatus(statusFilter?: number): Promise<void> {
+async function showTasksByStatus(statusFilter?: any): Promise<void> {
   const filtered = statusFilter
     ? tasks.filter((t) => t.status === statusFilter)
     : tasks;
@@ -136,7 +119,7 @@ async function showTasksByStatus(statusFilter?: number): Promise<void> {
   console.log('\nEstas son tus tareas:\n');
   filtered.forEach((t, i) => console.log(`[${i + 1}]`, t.title));
 
-  const taskID = parseInt(await ask(SELECT_TASK_MSG));
+  const taskID = parseInt(await ask(MSG.SELECT_TASK_MSG));
   if (taskID === 0) return;
 
   const taskSelected = filtered[taskID - 1];
@@ -146,7 +129,7 @@ async function showTasksByStatus(statusFilter?: number): Promise<void> {
   }
 
   const difficulty = getDifficulty(taskSelected.difficulty);
-  const status = getStatus(taskSelected.status);
+  const status = taskSelected.status;
 
   console.log(
     '\nEsta es la tarea que elegiste:\n',
@@ -162,7 +145,7 @@ async function showTasksByStatus(statusFilter?: number): Promise<void> {
     '\n'
   );
 
-  const option = await ask(EDIT_SELECTED_MSG);
+  const option = await ask(MSG.EDIT_SELECTED_MSG);
   if (option.toLowerCase() === 'e') await editTask(tasks.indexOf(taskSelected));
 }
 
@@ -181,7 +164,7 @@ async function showDoneTask() {
 
 // busqueda de tarea
 async function searchTask(): Promise<void> {
-  const search = await ask(SEARCH_MSG);
+  const search = await ask(MSG.SEARCH_MSG);
 
   const found = tasks.filter(
     (t) => t.title.toLowerCase() === search.toLowerCase()
@@ -196,7 +179,7 @@ async function searchTask(): Promise<void> {
     console.log(`[${i + 1}]`, t.title, '\t', t.description)
   );
 
-  const taskID = parseInt(await ask(SELECT_TASK_MSG));
+  const taskID = parseInt(await ask(MSG.SELECT_TASK_MSG));
   if (taskID === 0) return;
 
   const taskSelected = found[taskID - 1];
@@ -219,52 +202,14 @@ async function searchTask(): Promise<void> {
     '\n'
   );
 
-  const option = await ask(EDIT_SELECTED_MSG);
+  const option = await ask(MSG.EDIT_SELECTED_MSG);
   if (option.toLowerCase() === 'e') await editTask(tasks.indexOf(taskSelected));
 }
 
-// agregar tarea
 async function addTask(): Promise<void> {
-  console.log('Estas creando una nueva tarea\nNO se permiten vacios');
-
-  const newTask: Task = {
-    title: '',
-    description: '',
-    difficulty: 0,
-    status: 0,
-  };
-
-  const title = await ask(TITLE_MSG);
-  if (title.trim() === '') {
-    console.log('no se permiten vacios!!');
-    return;
-  }
-  newTask.title = title;
-
-  const desc = await ask(DESC_MSG);
-  if (desc.trim() === '') {
-    console.log('no se permiten vacios!!');
-    return;
-  }
-  newTask.description = desc;
-
-  const status = parseInt(await ask(STATUS_MSG));
-  if (isNaN(status) || status < 1 || status > 4) {
-    console.log('**Entrada incorrecta**');
-    return;
-  }
-  newTask.status = status;
-
-  const diff = parseInt(await ask(DIFF_MSG));
-  if (isNaN(diff) || diff < 1 || diff > 3) {
-    console.log('**Entrada incorrecta**');
-    return;
-  }
-  newTask.difficulty = diff;
-
-  tasks.push(newTask);
-  console.log('\n Datos guardados correctamente!');
+  await taskManager.addTask(ask);
 }
+
 
 async function menu(): Promise<void> {
   const menu_option = await ask(MSG.MENU_MSG);
