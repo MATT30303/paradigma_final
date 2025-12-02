@@ -66,12 +66,13 @@ function showStats(tasks: Task[]): void {
 function getStats(tasks: Task[]) {
   return {
     total: tasks.length,
-    pending: tasks.filter((t) => t.status === 'PENDING').length,
-    onCourse: tasks.filter((t) => t.status === 'IN_PROGRESS').length,
-    finished: tasks.filter((t) => t.status === 'FINISHED').length,
-    canceled: tasks.filter((t) => t.status === 'CANCELED').length,
+    pending: tasks.filter((t) => t.getStatus() === 'PENDING').length,
+    onCourse: tasks.filter((t) => t.getStatus() === 'IN_PROGRESS').length,
+    finished: tasks.filter((t) => t.getStatus() === 'FINISHED').length,
+    canceled: tasks.filter((t) => t.getStatus() === 'CANCELED').length,
   };
 }
+
 
 
 
@@ -108,7 +109,7 @@ async function menuTasks(): Promise<void> {
 
 async function showTasksByStatus(statusFilter?: any): Promise<void> {
   const filtered = statusFilter
-    ? tasks.filter((t) => t.status === statusFilter)
+    ? tasks.filter((t) => t.getStatus() === statusFilter)
     : tasks;
 
   if (filtered.length === 0) {
@@ -117,7 +118,7 @@ async function showTasksByStatus(statusFilter?: any): Promise<void> {
   }
 
   console.log('\nEstas son tus tareas:\n');
-  filtered.forEach((t, i) => console.log(`[${i + 1}]`, t.title));
+  filtered.forEach((t, i) => console.log(`[${i + 1}]`, t.getTitle()));
 
   const taskID = parseInt(await ask(MSG.SELECT_TASK_MSG));
   if (taskID === 0) return;
@@ -128,14 +129,14 @@ async function showTasksByStatus(statusFilter?: any): Promise<void> {
     return;
   }
 
-  const difficulty = getDifficulty(taskSelected.difficulty);
-  const status = taskSelected.status;
+  const difficulty = getDifficulty(taskSelected.getDifficulty());
+  const status = taskSelected.getStatus();
 
   console.log(
     '\nEsta es la tarea que elegiste:\n',
-    taskSelected.title,
+    taskSelected.getTitle(),
     '\n',
-    taskSelected.description,
+    taskSelected.getDescription(),
     '\n',
     'Estado: ',
     status,
@@ -167,7 +168,7 @@ async function searchTask(): Promise<void> {
   const search = await ask(MSG.SEARCH_MSG);
 
   const found = tasks.filter(
-    (t) => t.title.toLowerCase() === search.toLowerCase()
+    (t) => t.getTitle().toLowerCase() === search.toLowerCase()
   );
 
   if (found.length === 0) {
@@ -176,7 +177,7 @@ async function searchTask(): Promise<void> {
   }
 
   found.forEach((t, i) =>
-    console.log(`[${i + 1}]`, t.title, '\t', t.description)
+    console.log(`[${i + 1}]`, t.getTitle(), '\t', t.getDescription())
   );
 
   const taskID = parseInt(await ask(MSG.SELECT_TASK_MSG));
@@ -190,15 +191,15 @@ async function searchTask(): Promise<void> {
 
   console.log(
     '\nEsta es la tarea que elegiste:\n',
-    taskSelected.title,
+    taskSelected.getTitle(),
     '\n',
-    taskSelected.description,
+    taskSelected.getDescription(),
     '\n',
     'Estado: ',
-    taskSelected.status,
+    taskSelected.getStatus(),
     '\n',
     'Dificultad: ',
-    taskSelected.difficulty,
+    taskSelected.getDifficulty(),
     '\n'
   );
 
