@@ -7,43 +7,43 @@ export class TaskManager {
     async addTask(ask: (msg: string) => Promise<string>): Promise<void> {
         console.log('Estas creando una nueva tarea\nNO se permiten vacios');
 
-        const newTask: Task = {
-        title: '',
-        description: '',
-        status: 'PENDING',
-        createdAt: '',
-        updatedAt: '',
-        dueDate: '',
-        difficulty: 0,
-        };
+    const newTask = new Task(
+        '',         // title
+        '',         // description
+        'PENDING',  // status
+        '',         // createdAt
+        '',         // updatedAt
+        '',         // dueDate
+        0           // difficulty
+    );
 
         const title = await ask(MSG.TITLE_MSG);
         if (title.trim() === '') {
         console.log('no se permiten vacios!!');
         return;
         }
-        newTask.title = title;
+        newTask.setTitle(title);
 
         const desc = await ask(MSG.DESC_MSG);
         if (desc.trim() === '') {
         console.log('no se permiten vacios!!');
         return;
         }
-        newTask.description = desc;
+        newTask.setDescription(desc);
 
         const status = parseInt(await ask(MSG.STATUS_MSG));
         switch(status){
             case 1:
-                newTask.status = 'PENDING';
+                newTask.setStatus('PENDING');
                 break;
             case 2:
-                newTask.status = 'IN_PROGRESS';
+                newTask.setStatus('IN_PROGRESS');
                 break;
             case 3:
-                newTask.status = 'FINISHED';
+                newTask.setStatus('FINISHED');
                 break;
             case 4:
-                newTask.status = 'CANCELED';
+                newTask.setStatus('CANCELED');
                 break;
             default:
                 console.log('**Entrada incorrecta**');
@@ -55,17 +55,17 @@ export class TaskManager {
         console.log('**Entrada incorrecta**');
         return;
         }
-        newTask.difficulty = diff;
+        newTask.setDifficulty(diff);
 
         const now = new Date().toISOString();
-        newTask.createdAt = now;
+        newTask.setCreatedAt(now);
 
         const dueDate = await ask("Fecha límite (YYYY-MM-DD): ");
         if (dueDate.trim() === "") {
         console.log("no se permiten vacíos!!");
         return;
         }
-        newTask.dueDate = dueDate;
+        newTask.setDueDate(dueDate);
 
         this.tasks.push(newTask);
         console.log('\n Datos guardados correctamente!');
@@ -79,30 +79,30 @@ export class TaskManager {
         return;
         }
 
-        console.log(`\nEstas editando la tarea "${task.title}"\n`);
+        console.log(`\nEstas editando la tarea "${task.getTitle()}"\n`);
         console.log(
         '- Si deseas mantener los valores de un atributo, simplemente dejalo en blanco.'
         );
         console.log('- Si deseas dejar en blanco un atributo, escribe un espacio');
 
         const desc = await ask(MSG.DESC_MSG);
-        if (desc !== '') task.description = desc;
+        if (desc !== '') task.setDescription(desc);
 
         const status = await ask(MSG.STATUS_MSG);
         if (status !== '') {
         const num = parseInt(status);
         switch (num) {
             case 1:
-            task.status = 'PENDING';
+            task.setStatus('PENDING');
             break;
             case 2:
-            task.status = 'IN_PROGRESS';
+            task.setStatus('IN_PROGRESS');
             break;
             case 3:
-            task.status = 'FINISHED';
+            task.setStatus('FINISHED');
             break;
             case 4:
-            task.status = 'CANCELED';
+            task.setStatus('CANCELED');
             break;
             default:
             console.log('**Entrada incorrecta**');
@@ -111,9 +111,9 @@ export class TaskManager {
         }
 
         const diff = await ask(MSG.DIFF_MSG);
-        if (diff !== '') task.difficulty = parseInt(diff);
+        if (diff !== '') task.setDifficulty(parseInt(diff));
 
         console.log('\nDatos guardados!');
     }
 }
-//nashei
+
