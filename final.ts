@@ -10,6 +10,7 @@ const rl = readline.createInterface({
 const taskManager = new TaskManager();
 const tasks = taskManager.tasks;
 
+
 function ask(question: string): Promise<string> {
   return new Promise((resolve) => rl.question(question, resolve));
 }
@@ -223,48 +224,10 @@ async function searchTask(): Promise<void> {
   if (option.toLowerCase() === 'e') await editTask(tasks.indexOf(taskSelected));
 }
 
-// agregar tarea
 async function addTask(): Promise<void> {
-  console.log('Estas creando una nueva tarea\nNO se permiten vacios');
-
-  const newTask: Task = {
-    title: '',
-    description: '',
-    difficulty: 0,
-    status: 0,
-  };
-
-  const title = await ask(TITLE_MSG);
-  if (title.trim() === '') {
-    console.log('no se permiten vacios!!');
-    return;
-  }
-  newTask.title = title;
-
-  const desc = await ask(DESC_MSG);
-  if (desc.trim() === '') {
-    console.log('no se permiten vacios!!');
-    return;
-  }
-  newTask.description = desc;
-
-  const status = parseInt(await ask(STATUS_MSG));
-  if (isNaN(status) || status < 1 || status > 4) {
-    console.log('**Entrada incorrecta**');
-    return;
-  }
-  newTask.status = status;
-
-  const diff = parseInt(await ask(DIFF_MSG));
-  if (isNaN(diff) || diff < 1 || diff > 3) {
-    console.log('**Entrada incorrecta**');
-    return;
-  }
-  newTask.difficulty = diff;
-
-  tasks.push(newTask);
-  console.log('\n Datos guardados correctamente!');
+  await taskManager.addTask(ask, MSG);
 }
+
 
 async function menu(): Promise<void> {
   const menu_option = await ask(MSG.MENU_MSG);
