@@ -33,10 +33,10 @@ function getDifficulty(difficulty_number: number): string {
 //estadisticas
 async function showStats(tasks: Task[]): Promise<void> {
   const stats = await getStats(tasks);
-  const pending = (stats.pending * stats.total) / 100;
-  const onCourse = (stats.onCourse * stats.total) / 100;
-  const finished = (stats.finished * stats.total) / 100;
-  const canceled = (stats.canceled * stats.total) / 100;
+  const pending = stats.total === 0 ? 0 : (stats.pending / stats.total) * 100;
+  const onCourse = stats.total === 0 ? 0 : (stats.onCourse / stats.total) * 100;
+  const finished = stats.total === 0 ? 0 : (stats.finished / stats.total) * 100;
+  const canceled = stats.total === 0 ? 0 : (stats.canceled / stats.total) * 100;
 
   console.log(
     '\nEstadísticas de tareas:\n--> Total de tareas:',
