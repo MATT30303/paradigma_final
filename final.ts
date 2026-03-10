@@ -1,7 +1,7 @@
 import readline from 'readline';
 import { TaskManager } from './TaskManager.ts';
 import { Task } from './Task.ts';
-import MSG from './messages.json' with { type: 'json' };
+import MSG from './messages.json';
 import { getHighPriorityTasks, getOverdueTasks } from './queries.ts';
 
 const rl = readline.createInterface({
