@@ -2,7 +2,7 @@ import readline from 'readline';
 import { TaskManager } from './TaskManager.ts';
 import { Task } from './Task.ts';
 import MSG from './messages.json' with { type: 'json' };
-import {getHighPriorityTasks, getOverdueTasks} from './queries.ts';;
+import { getHighPriorityTasks, getOverdueTasks } from './queries.ts';
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -11,7 +11,6 @@ const rl = readline.createInterface({
 
 const taskManager = new TaskManager();
 const tasks = taskManager.tasks;
-
 
 function ask(question: string): Promise<string> {
   return new Promise((resolve) => rl.question(question, resolve));
@@ -61,7 +60,7 @@ async function showStats(tasks: Task[]): Promise<void> {
     '//',
     canceled,
     '%',
-    '\n'
+    '\n',
   );
 }
 
@@ -74,9 +73,6 @@ async function getStats(tasks: Task[]) {
     canceled: tasks.filter((t) => t.getStatus() === 'CANCELED').length,
   };
 }
-
-
-
 
 // editar tarea
 async function editTask(taskID: number): Promise<void> {
@@ -149,50 +145,53 @@ async function showTasksByStatus(statusFilter?: string): Promise<void> {
     '\n',
     'Dificultad: ',
     difficulty,
-    '\n'
+    '\n',
   );
 
   const option = await ask(MSG.TASK_ACTION_MSG);
   const index = tasks.indexOf(taskSelected);
 
   if (option.toLowerCase() === 'e') {
-      await editTask(index);
+    await editTask(index);
   } else if (option.toLowerCase() === 'd') {
-      await taskManager.deleteTask(index);
+    await taskManager.deleteTask(index);
   }
 }
-
 
 async function showAllTask() {
   await showTasksByStatus();
 }
 async function showPendingTask() {
-  await showTasksByStatus("PENDING");
+  await showTasksByStatus('PENDING');
 }
 async function showOnCourseTask() {
-  await showTasksByStatus("IN_PROGRESS");
+  await showTasksByStatus('IN_PROGRESS');
 }
 async function showDoneTask() {
-  await showTasksByStatus("FINISHED");
+  await showTasksByStatus('FINISHED');
 }
 async function showCanceledTask() {
-  await showTasksByStatus("CANCELED");
+  await showTasksByStatus('CANCELED');
 }
 
 //ordenar tareas por titulo
-const sortByTitle = (tasks: Task[])=>
+const sortByTitle = (tasks: Task[]) =>
   tasks.slice().sort((a, b) => a.getTitle().localeCompare(b.getTitle()));
 //ordenar tareas por fecha
 const sortByDueDate = (tasks: Task[]) =>
-  tasks.slice().sort((a, b) => new Date(a.getDueDate()).getTime() - new Date(b.getDueDate()).getTime());
+  tasks
+    .slice()
+    .sort(
+      (a, b) =>
+        new Date(a.getDueDate()).getTime() - new Date(b.getDueDate()).getTime(),
+    );
 //ordenar tareas por dificultad
 const sortByDifficulty = (tasks: Task[]) =>
   tasks.slice().sort((a, b) => a.getDifficulty() - b.getDifficulty());
 
 //ordenar tareas por estado
-const sortByStatus = (tasks: Task[]) => 
+const sortByStatus = (tasks: Task[]) =>
   tasks.slice().sort((a, b) => a.getStatus().localeCompare(b.getStatus()));
-
 
 function showTasks(tasks: Task[]): void {
   if (tasks.length === 0) {
@@ -201,7 +200,8 @@ function showTasks(tasks: Task[]): void {
   }
   console.log('\nEstas son tus tareas ordenadas:\n');
 
-  tasks.forEach((t, i) => {console.log(`
+  tasks.forEach((t, i) => {
+    console.log(`
     [${i + 1}]
     titulo: ${t.getTitle()}
     descripcion: ${t.getDescription()}
@@ -215,13 +215,12 @@ function showTasks(tasks: Task[]): void {
   console.log('\n total de tareas:', tasks.length, '\n');
 }
 
-
 const taskFilters: Record<string, (t: Task[]) => Task[]> = {
-  "ALL":   (tasks) => tasks,
-  "PENDING": (tasks) => tasks.filter(t => t.getStatus() === "PENDING"),
-  "IN_PROGRESS": (tasks) => tasks.filter(t => t.getStatus() === "IN_PROGRESS"),
-  "FINISHED": (tasks) => tasks.filter(t => t.getStatus() === "FINISHED"),
-  "CANCELED": (tasks) => tasks.filter(t => t.getStatus() === "CANCELED"),
+  ALL: (tasks) => tasks,
+  PENDING: (tasks) => tasks.filter((t) => t.getStatus() === 'PENDING'),
+  IN_PROGRESS: (tasks) => tasks.filter((t) => t.getStatus() === 'IN_PROGRESS'),
+  FINISHED: (tasks) => tasks.filter((t) => t.getStatus() === 'FINISHED'),
+  CANCELED: (tasks) => tasks.filter((t) => t.getStatus() === 'CANCELED'),
 };
 
 // listar tareas con filtro funcional
@@ -229,41 +228,41 @@ async function listTasks(): Promise<void> {
   const opt = await ask(MSG.SHOW_LIST_MSG);
 
   const mapOptionToStatus: Record<string, string> = {
-    "1": "ALL",
-    "2": "PENDING",
-    "3": "IN_PROGRESS",
-    "4": "FINISHED",
-    "5": "CANCELED",
+    '1': 'ALL',
+    '2': 'PENDING',
+    '3': 'IN_PROGRESS',
+    '4': 'FINISHED',
+    '5': 'CANCELED',
   };
 
   const status = mapOptionToStatus[opt];
 
   if (!status) {
-    console.log("Opción inválida.");
+    console.log('Opción inválida.');
     return;
   }
   const filterFn = taskFilters[status];
   if (!filterFn) {
-    console.log("Error interno: filtro inválido.");
+    console.log('Error interno: filtro inválido.');
     return;
   }
 
-const filtered = filterFn(tasks);
+  const filtered = filterFn(tasks);
 
   if (filtered.length === 0) {
-    console.log("\nNo hay tareas para mostrar.\n");
+    console.log('\nNo hay tareas para mostrar.\n');
     return;
   }
 
-  console.log("\nEstas son tus tareas:\n");
+  console.log('\nEstas son tus tareas:\n');
 
   filtered
     .map((t, i) => `[${i + 1}] ${t.getTitle()}`)
-    .forEach(line => console.log(line));
+    .forEach((line) => console.log(line));
 
   const id = parseInt(await ask(MSG.SELECT_TASK_MSG));
   if (!id || id < 1 || id > filtered.length) {
-    console.log("ID inválido.");
+    console.log('ID inválido.');
     return;
   }
 
@@ -282,33 +281,32 @@ const filtered = filterFn(tasks);
 
   const index = tasks.indexOf(task);
 
-  if (action.toLowerCase() === "e") await editTask(index);
-  if (action.toLowerCase() === "d") await deleteTask(index);
+  if (action.toLowerCase() === 'e') await editTask(index);
+  if (action.toLowerCase() === 'd') await deleteTask(index);
 }
-
-
 
 // busqueda de tarea
 async function searchTasksBy(): Promise<void> {
   const query = await ask(MSG.SEARCH_MSG);
 
-  const results = tasks
-    .filter(t => t.getTitle().toLowerCase().includes(query.toLowerCase())); 
+  const results = tasks.filter((t) =>
+    t.getTitle().toLowerCase().includes(query.toLowerCase()),
+  );
 
   if (results.length === 0) {
-    console.log("No se encontraron tareas.");
+    console.log('No se encontraron tareas.');
     return;
   }
 
-  console.log("\nResultados encontrados:\n");
+  console.log('\nResultados encontrados:\n');
 
   results
-    .map((t, i) => `[${i + 1}] ${t.getTitle()}`) 
-    .forEach(line => console.log(line));        
+    .map((t, i) => `[${i + 1}] ${t.getTitle()}`)
+    .forEach((line) => console.log(line));
   const id = parseInt(await ask(MSG.SELECT_TASK_MSG));
 
   if (!id || id < 1 || id > results.length) {
-    console.log("ID inválido.");
+    console.log('ID inválido.');
     return;
   }
 
@@ -320,7 +318,7 @@ async function searchTasksBy(): Promise<void> {
   ${task.getDescription()}
   Estado: ${task.getStatus()}
   Dificultad: ${getDifficulty(task.getDifficulty())}
-  creado en: ${task.getDueDate()}
+  creado en: ${task.getCreatedAt()}
   vence en: ${task.getDueDate()}
   ===============
   `);
@@ -328,20 +326,19 @@ async function searchTasksBy(): Promise<void> {
   const action = await ask(MSG.TASK_ACTION_MSG);
   const index = tasks.indexOf(task);
 
-  if (action.toLowerCase() === "e") await editTask(index);
-  if (action.toLowerCase() === "d") await deleteTask(index);
+  if (action.toLowerCase() === 'e') await editTask(index);
+  if (action.toLowerCase() === 'd') await deleteTask(index);
 }
 
-
 //mostrar tareas ordenadas
-async function sortByTask(tasks: Task[]): Promise<void> {  
+async function sortByTask(tasks: Task[]): Promise<void> {
   const opt = await ask(MSG.SORT_BY_MSG);
 
   const strategies: Record<string, (t: Task[]) => Task[]> = {
-    "1": sortByTitle,
-    "2": sortByDueDate,
-    "3": sortByDifficulty,
-    "4": sortByStatus
+    '1': sortByTitle,
+    '2': sortByDueDate,
+    '3': sortByDifficulty,
+    '4': sortByStatus,
   };
 
   const sorted = strategies[opt]?.(tasks) ?? tasks;
@@ -351,28 +348,25 @@ async function sortByTask(tasks: Task[]): Promise<void> {
 // agregar tarea
 async function addTask(): Promise<void> {
   await taskManager.addTask(ask);
-} 
+}
 
 // menu consultas
 async function queryMenu(tasks: Task[]): Promise<void> {
   const query = await ask(MSG.QUERY_MENU_MSG);
-    switch (query) {
-      case "1":
-        console.log(getHighPriorityTasks(tasks));
-        return queryMenu(tasks);
-      case "2":
-        console.log(getOverdueTasks(tasks));
-        return queryMenu(tasks);
-      case "0":
-        return menu();
-      default:
-        console.log("Opción inválida.");
-        return queryMenu(tasks);
-    }
-};
-
-
-
+  switch (query) {
+    case '1':
+      console.log(getHighPriorityTasks(tasks));
+      return queryMenu(tasks);
+    case '2':
+      console.log(getOverdueTasks(tasks));
+      return queryMenu(tasks);
+    case '0':
+      return menu();
+    default:
+      console.log('Opción inválida.');
+      return queryMenu(tasks);
+  }
+}
 
 // menu general
 async function menu(): Promise<void> {
@@ -394,7 +388,7 @@ async function menu(): Promise<void> {
     case '5':
       await showStats(tasks);
       break;
-      case '6':
+    case '6':
       await queryMenu(tasks);
       break;
     case '0':
@@ -406,7 +400,6 @@ async function menu(): Promise<void> {
   }
   await menu();
 }
-
 
 //arranque de programa
 async function main(): Promise<void> {
